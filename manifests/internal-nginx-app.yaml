@@ -18,7 +18,7 @@ spec:
           - name: controller.service.type
             value: NodePort
         valueFiles:
-          - $values/internal-nginx-values.yaml
+          - $values/manifests/internal-nginx-values.yaml
     - repoURL: https://github.com/coveraver/argodeploy.git
       path: manifests
       targetRevision: main
