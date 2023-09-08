@@ -17,7 +17,7 @@ spec:
           value: '1'
         - name: controller.service.type
           value: NodePort
-      valueFile:
+      valueFiles:
         - internal-nginx-values.yaml
   destination:
     server: https://kubernetes.default.svc
