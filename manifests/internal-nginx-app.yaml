@@ -17,12 +17,12 @@ spec:
             value: '1'
           - name: controller.service.type
             value: NodePort
-    - repoURL: https://github.com/coveraver/argodeploy.git
-      path: manifests
-      targetRevision: main
-      helm:
         valueFiles:
-          - internal-nginx-values.yaml
+          - $values/charts/ingress-nginx/values.yaml
+    - repoURL: https://github.com/coveraver/argodeploy.git
+      path: manifests/internal-nginx-values.yaml
+      targetRevision: main
+      ref: values
   destination:
     server: https://kubernetes.default.svc
     namespace: internal-nginx
