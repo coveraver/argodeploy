@@ -12,6 +12,7 @@ spec:
       targetRevision: 4.1.1
       chart: ingress-nginx
       helm:
+        version: v3
         parameters:
           - name: controller.replicaCount
             value: '1'
