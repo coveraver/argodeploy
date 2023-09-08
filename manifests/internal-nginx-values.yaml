@@ -1,4 +1,7 @@
+fullnameOverride: internal-nginx-ingress
+
 controller:
+  ingressClassByName: true
   resources:
     limits:
       cpu: 100m
