@@ -20,7 +20,6 @@ spec:
         valueFiles:
           - $values/manifests/internal-nginx-values.yaml
     - repoURL: https://github.com/coveraver/argodeploy.git
-      path: manifests
       targetRevision: main
       ref: values
   destination:
