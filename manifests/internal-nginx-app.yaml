@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: application
+metadata:
+  name: internal-nginx-ingress
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: infrastructure
+  source:
+    repoURL: https://kubernetes.github.io/ingress-nginx
+    targetRevision: 4.1.1
+    chart: ingress-nginx
+    helm:
+      parameters:
+        - name: controller.replicaCount
+          value: '1'
+        - name: controller.service.type
+          value: NodePort
+      valueFile:
+        - internal-nginx-values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: internal-nginx
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
