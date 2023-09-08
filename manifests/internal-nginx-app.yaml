@@ -18,9 +18,9 @@ spec:
           - name: controller.service.type
             value: NodePort
         valueFiles:
-          - $values/charts/ingress-nginx/values.yaml
+          - $values/internal-nginx-values.yaml
     - repoURL: https://github.com/coveraver/argodeploy.git
-      path: manifests/internal-nginx-values.yaml
+      path: manifests
       targetRevision: main
       ref: values
   destination:
