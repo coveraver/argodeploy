@@ -3,7 +3,7 @@ fullnameOverride: internal-nginx-ingress
 controller:
   ingressClassResource:
     name: internal-nginx
-    ingressClass: internal-nginx
+  ingressClass: internal-nginx
   ingressClassByName: true
   resources:
     limits:
